@@ -1,0 +1,19 @@
+# swagger_docs/index.yml
+API Status Endpoint
+Checks if the Kafka Producer API is running and connected to Kafka.
+---
+responses:
+  '200': # Ключи кодов ответа лучше брать в кавычки в YAML
+    description: API is running and connected to Kafka.
+    content:
+      text/plain:
+        schema:
+          type: string
+          example: 'Kafka Producer API is running! Connected to Kafka at kafka:9092'
+  '503':
+    description: API is running but not connected to Kafka.
+    content:
+      text/plain:
+        schema:
+          type: string
+          example: 'Kafka Producer API is running! ERROR: Not connected to Kafka at kafka:9092. Check logs.'

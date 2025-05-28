@@ -1,0 +1,174 @@
+# infra/docker-compose.infra.yml
+networks:
+  ecommerce_network:
+    external: true
+
+services:
+  postgres:
+    image: debezium/postgres:15-alpine
+    container_name: postgres_ecommerce
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=pguser
+      - POSTGRES_PASSWORD=pgpassword
+      - POSTGRES_DB=ecommerce_db
+    volumes:
+      - ./postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ecommerce_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pguser -d ecommerce_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mongo:
+    image: mongo:6.0
+    container_name: mongo_ecommerce
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+      - ./mongo/mongo-keyfile:/etc/mongo/mongo-keyfile:ro
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+      - MONGO_INITDB_ROOT_PASSWORD=mongopassword
+    command: mongod --replSet rs0 --keyFile /etc/mongo/mongo-keyfile --bind_ip_all --auth
+    networks:
+      - ecommerce_network
+    healthcheck:
+      test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mongo-setup:
+    image: mongo:6.0
+    container_name: mongo_setup_infra
+    depends_on:
+      mongo:
+        condition: service_healthy
+    restart: "no"
+    volumes:
+      - ./mongo/mongo-keyfile:/etc/mongo/mongo-keyfile:ro
+    networks:
+      - ecommerce_network
+    entrypoint: |
+      bash -c '
+      echo "Waiting for MongoDB (infra) to start..."
+      until mongosh --host mongo --eval "print(\"waited for connection\")"
+      do
+        sleep 2
+      done
+      echo "MongoDB (infra) started. Configuring replica set..."
+      mongosh --host mongo --username mongoadmin --password mongopassword --authenticationDatabase admin <<EOF
+      try {
+        rs.status();
+        printjson(rs.status());
+        print("Replica set already initialized.");
+      } catch (e) {
+        print("Initializing replica set...");
+        rs.initiate({
+          _id: "rs0",
+          members: [
+            { _id: 0, host: "mongo:27017" }
+          ]
+        });
+        printjson(rs.status());
+      }
+      EOF
+      echo "Replica set configured/checked."
+      '
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.3
+    container_name: zookeeper_infra
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - ecommerce_network
+    healthcheck:
+      test: echo srvr | nc localhost 2181 || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  kafka:
+    image: confluentinc/cp-kafka:7.5.3
+    container_name: kafka_infra
+    ports:
+      - "29092:29092"
+    depends_on:
+      zookeeper:
+        condition: service_healthy
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+    networks:
+      - ecommerce_network
+    healthcheck:
+      test: kafka-topics --bootstrap-server localhost:9092 --list || exit 1
+      interval: 15s
+      timeout: 10s
+      retries: 10
+
+  kafka-connect:
+    image: debezium/connect:2.4.2.Final
+    container_name: kafka_connect_infra
+    ports:
+      - "8083:8083"
+    depends_on:
+      kafka:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      mongo-setup:
+        condition: service_completed_successfully
+    environment:
+      BOOTSTRAP_SERVERS: kafka:9092
+      GROUP_ID: connect-cluster-group
+      CONFIG_STORAGE_TOPIC: connect_configs
+      OFFSET_STORAGE_TOPIC: connect_offsets
+      STATUS_STORAGE_TOPIC: connect_statuses
+      CONNECT_KEY_CONVERTER: org.apache.kafka.connect.json.JsonConverter
+      CONNECT_VALUE_CONVERTER: org.apache.kafka.connect.json.JsonConverter
+      CONNECT_REST_ADVERTISED_HOST_NAME: localhost
+    volumes:
+      - ./kafka-connect/connectors:/kafka/connectors/custom 
+    networks:
+      - ecommerce_network
+    healthcheck:
+      test: curl -f http://localhost:8083/connectors || exit 1 
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  kafdrop:
+    image: obsidiandynamics/kafdrop:latest
+    container_name: kafdrop_infra
+    ports:
+      - "9000:9000"
+    environment:
+      KAFKA_BROKERCONNECT: kafka:9092
+      JVM_OPTS: "-Xms32M -Xmx64M"
+      SERVER_SERVLET_CONTEXTPATH: "/"
+    depends_on:
+      kafka:
+        condition: service_healthy
+    networks:
+      - ecommerce_network
+
+volumes:
+  postgres_data:
+  mongo_data:

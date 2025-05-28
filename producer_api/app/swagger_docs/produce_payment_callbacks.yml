@@ -1,0 +1,73 @@
+# swagger_docs/produce_payment_callbacks.yml
+Produce a payment gateway callback event to Kafka.
+This endpoint accepts callbacks from payment gateways.
+---
+tags:
+  - Producer Endpoints
+parameters:
+  - in: body
+    name: body
+    required: true
+    schema:
+      type: object
+      required:
+        - order_id
+        - transaction_id
+        - status
+        - gateway_data
+      properties:
+        order_id:
+          type: string
+          description: The unique identifier of the order.
+          example: "ORD9876"
+        transaction_id:
+          type: string
+          description: The transaction ID from the payment gateway.
+          example: "txn_123abc456def"
+        status:
+          type: string
+          description: "The status of the payment (e.g., 'completed', 'failed', 'pending')."
+          example: "completed"
+        gateway_data:
+          type: object
+          description: Additional data payload from the payment gateway.
+          example:
+            charge_id: "ch_123"
+            amount_captured: 10000
+        timestamp:
+          type: number
+          format: double
+          description: Optional. Unix timestamp of the event.
+          example: 1678886400.123
+responses:
+  200:
+    description: Message sent successfully.
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: Message sent successfully
+        data_sent:
+          type: object
+          description: The data that was sent to Kafka.
+  400:
+    description: Bad request.
+    schema:
+      type: object
+      properties:
+        error:
+          type: string
+  500:
+    description: Internal server error.
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+        message:
+          type: string

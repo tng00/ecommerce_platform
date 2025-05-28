@@ -1,0 +1,70 @@
+# swagger_docs/produce_shipment_updates.yml
+Produce a shipment status update event to Kafka.
+This endpoint accepts updates on shipment statuses.
+---
+tags:
+  - Producer Endpoints
+parameters:
+  - in: body
+    name: body
+    required: true
+    schema:
+      type: object
+      required:
+        - order_id
+        - tracking_number
+        - new_status
+      properties:
+        order_id:
+          type: string
+          description: The unique identifier of the order.
+          example: "ORD9876"
+        tracking_number:
+          type: string
+          description: The shipment tracking number.
+          example: "TN123456789US"
+        new_status:
+          type: string
+          description: "The new status of the shipment (e.g., 'shipped', 'in_transit', 'delivered')."
+          example: "shipped"
+        location:
+          type: string
+          description: Optional. Current location of the shipment.
+          example: "New York, NY"
+        timestamp:
+          type: number
+          format: double
+          description: Optional. Unix timestamp of the event.
+          example: 1678886400.123
+responses:
+  200:
+    description: Message sent successfully.
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: Message sent successfully
+        data_sent:
+          type: object
+          description: The data that was sent to Kafka.
+  400:
+    description: Bad request.
+    schema:
+      type: object
+      properties:
+        error:
+          type: string
+  500:
+    description: Internal server error.
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+        message:
+          type: string

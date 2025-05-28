@@ -1,0 +1,17 @@
+{
+    "name": "mongo-ecommerce-connector",
+    "config": {
+        "connector.class": "io.debezium.connector.mongodb.MongoDbConnector",
+        "tasks.max": "1",
+        "mongodb.connection.string": "mongodb://mongoadmin:mongopassword@mongo:27017/admin?replicaSet=rs0",
+        "mongodb.name": "mongo_ecomm_cdc",
+        "topic.prefix": "mongo_ecomm_cdc",
+        "collection.include.list": "ecommerce_db.product_details_mongo,ecommerce_db.user_profiles_mongo,ecommerce_db.reviews_mongo,ecommerce_db.seller_profiles_mongo,ecommerce_db.sessions_mongo",
+        "key.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "key.converter.schemas.enable": "false",
+        "value.converter": "org.apache.kafka.connect.json.JsonConverter",
+        "value.converter.schemas.enable": "false",
+        "capture.mode": "change_streams_update_full",
+        "decimal.handling.mode": "string"
+    }
+}

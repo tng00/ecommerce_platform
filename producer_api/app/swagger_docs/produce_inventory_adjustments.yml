@@ -1,0 +1,66 @@
+# swagger_docs/produce_inventory_adjustments.yml
+Produce an inventory adjustment event to Kafka.
+This endpoint accepts product inventory changes.
+---
+tags:
+  - Producer Endpoints
+parameters:
+  - in: body
+    name: body
+    required: true
+    schema:
+      type: object
+      required:
+        - product_id
+        - quantity_change
+        - reason
+      properties:
+        product_id:
+          type: string
+          description: The unique identifier of the product.
+          example: "P12345"
+        quantity_change:
+          type: integer
+          description: The change in quantity (positive for addition, negative for subtraction).
+          example: -2
+        reason:
+          type: string
+          description: The reason for the inventory adjustment.
+          example: "Sale"
+        timestamp:
+          type: number
+          format: double
+          description: Optional. Unix timestamp of the event. If not provided, it will be added by the server.
+          example: 1678886400.123
+responses:
+  200:
+    description: Message sent successfully.
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: success
+        message:
+          type: string
+          example: Message sent successfully
+        data_sent:
+          type: object
+          description: The data that was sent to Kafka.
+  400:
+    description: Bad request (e.g., missing fields, invalid JSON).
+    schema:
+      type: object
+      properties:
+        error:
+          type: string
+  500:
+    description: Internal server error (e.g., Kafka producer not available).
+    schema:
+      type: object
+      properties:
+        status:
+          type: string
+          example: error
+        message:
+          type: string

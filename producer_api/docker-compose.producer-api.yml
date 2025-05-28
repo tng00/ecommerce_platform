@@ -1,0 +1,19 @@
+# producer_api/docker-compose.producer-api.yml
+networks:
+  ecommerce_network:
+    external: true
+
+services:
+  producer-api:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    container_name: flask_producer_api
+    ports:
+      - "5001:5001"
+    environment:
+      - KAFKA_BROKER_URL=kafka:9092
+      - FLASK_DEBUG=1
+    networks:
+      - ecommerce_network
+    restart: unless-stopped
