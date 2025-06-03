@@ -10,14 +10,12 @@ import atexit
 from flasgger import Swagger
 from flasgger.utils import swag_from
 
-# Настройка логирования
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
 swagger = Swagger(app)
 
-# Конфигурация Kafka
 KAFKA_BROKER_URL = os.environ.get('KAFKA_BROKER_URL', 'localhost:29092')
 producer = None
 
@@ -90,7 +88,6 @@ def index():
     else:
         return f"Kafka Producer API is running! ERROR: Not connected to Kafka at {KAFKA_BROKER_URL}. Check logs.", 503
 
-# --- Эндпоинт для inventory_adjustments ---
 @app.route('/produce/inventory_adjustments', methods=['POST'])
 @swag_from('swagger_docs/produce_inventory_adjustments.yml')
 def produce_inventory_adjustment():
@@ -111,7 +108,6 @@ def produce_inventory_adjustment():
         return jsonify({"status": "error", "message": message}), 500
 
 
-# --- Эндпоинт для payment_gateway_callbacks ---
 @app.route('/produce/payment_callbacks', methods=['POST'])
 @swag_from('swagger_docs/produce_payment_callbacks.yml')
 def produce_payment_callback():
@@ -132,7 +128,6 @@ def produce_payment_callback():
     else:
         return jsonify({"status": "error", "message": message}), 500
 
-# --- Эндпоинт для shipment_status_updates ---
 @app.route('/produce/shipment_updates', methods=['POST'])
 @swag_from('swagger_docs/produce_shipment_updates.yml')
 def produce_shipment_update():

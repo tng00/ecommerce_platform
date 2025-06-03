@@ -1,0 +1,17 @@
+FROM python:3.9-slim-buster
+
+WORKDIR /app
+
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+COPY producer_streaming/kafka_streaming.py . 
+
+ENV KAFKA_BOOTSTRAP_SERVERS=kafka:29092
+ENV CLICKHOUSE_HOST=clickhouse
+ENV CLICKHOUSE_PORT=8123
+ENV CLICKHOUSE_USER=default
+ENV CLICKHOUSE_PASSWORD=password
+ENV CLICKHOUSE_DB=default
+
+CMD ["python", "kafka_streaming.py"]

@@ -1,15 +1,11 @@
 #!/bin/bash
 
-# Имя вашего MongoDB контейнера
 MONGO_CONTAINER_NAME="mongo_ecommerce"
-# Имя пользователя и пароль для MongoDB (если включена аутентификация)
 MONGO_USER="mongoadmin"
 MONGO_PASSWORD="mongopassword"
 MONGO_AUTH_DB="admin"
-# База данных, в которой находятся коллекции
 DB_NAME="ecommerce_db"
 
-# JavaScript код для вставки документов
 MONGO_SCRIPT=$(cat <<EOF
 use ${DB_NAME};
 
@@ -89,7 +85,6 @@ print("Inserted 1 document into reviews_mongo");
 EOF
 )
 
-# Проверка, запущен ли контейнер
 if ! docker ps --filter "name=^/${MONGO_CONTAINER_NAME}$" --format "{{.Names}}" | grep -q "${MONGO_CONTAINER_NAME}"; then
   echo "Error: MongoDB container '${MONGO_CONTAINER_NAME}' is not running."
   exit 1
@@ -97,7 +92,6 @@ fi
 
 echo "Attempting to insert data into MongoDB container '${MONGO_CONTAINER_NAME}'..."
 
-# Выполнение скрипта в mongosh внутри Docker контейнера
 docker exec -i "${MONGO_CONTAINER_NAME}" mongosh \
   --username "${MONGO_USER}" \
   --password "${MONGO_PASSWORD}" \
@@ -107,7 +101,6 @@ docker exec -i "${MONGO_CONTAINER_NAME}" mongosh \
 ${MONGO_SCRIPT}
 EOF
 
-# Проверка кода завершения предыдущей команды
 if [ $? -eq 0 ]; then
   echo "MongoDB data insertion script executed successfully."
 else

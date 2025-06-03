@@ -3,7 +3,7 @@ API Status Endpoint
 Checks if the Kafka Producer API is running and connected to Kafka.
 ---
 responses:
-  '200': # Ключи кодов ответа лучше брать в кавычки в YAML
+  '200': 
     description: API is running and connected to Kafka.
     content:
       text/plain:

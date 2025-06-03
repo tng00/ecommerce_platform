@@ -1,0 +1,205 @@
+[2025-06-04T20:16:50.895+0000] {local_task_job_runner.py:120} INFO - ::group::Pre task execution logs
+[2025-06-04T20:16:50.937+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: daily_batch_processing.run_spark_daily_batch_job scheduled__2025-06-03T00:00:00+00:00 [queued]>
+[2025-06-04T20:16:50.949+0000] {taskinstance.py:2076} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: daily_batch_processing.run_spark_daily_batch_job scheduled__2025-06-03T00:00:00+00:00 [queued]>
+[2025-06-04T20:16:50.949+0000] {taskinstance.py:2306} INFO - Starting attempt 1 of 1
+[2025-06-04T20:16:50.966+0000] {taskinstance.py:2330} INFO - Executing <Task(BashOperator): run_spark_daily_batch_job> on 2025-06-03 00:00:00+00:00
+[2025-06-04T20:16:50.975+0000] {standard_task_runner.py:63} INFO - Started process 1190 to run task
+[2025-06-04T20:16:50.980+0000] {standard_task_runner.py:90} INFO - Running: ['***', 'tasks', 'run', 'daily_batch_processing', 'run_spark_daily_batch_job', 'scheduled__2025-06-03T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/daily_batch_processing.py', '--cfg-path', '/tmp/tmprntku83y']
+[2025-06-04T20:16:50.982+0000] {standard_task_runner.py:91} INFO - Job 5: Subtask run_spark_daily_batch_job
+[2025-06-04T20:16:51.046+0000] {task_command.py:426} INFO - Running <TaskInstance: daily_batch_processing.run_spark_daily_batch_job scheduled__2025-06-03T00:00:00+00:00 [running]> on host d6ca7b7459c0
+[2025-06-04T20:16:51.174+0000] {taskinstance.py:2648} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='***' AIRFLOW_CTX_DAG_ID='daily_batch_processing' AIRFLOW_CTX_TASK_ID='run_spark_daily_batch_job' AIRFLOW_CTX_EXECUTION_DATE='2025-06-03T00:00:00+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2025-06-03T00:00:00+00:00'
+[2025-06-04T20:16:51.175+0000] {taskinstance.py:430} INFO - ::endgroup::
+[2025-06-04T20:16:51.233+0000] {subprocess.py:63} INFO - Tmp dir root location: /tmp
+[2025-06-04T20:16:51.234+0000] {subprocess.py:75} INFO - Running command: ['/usr/bin/bash', '-c', '\n            /opt/spark/bin/spark-submit                 --master spark://spark-master:7077                 --conf spark.hadoop.fs.s3a.endpoint=http://minio:9000                 --conf spark.hadoop.fs.s3a.access.key=minioadmin                 --conf spark.hadoop.fs.s3a.secret.key=minioadmin                 --conf spark.hadoop.fs.s3a.path.style.access=true                 --conf spark.hadoop.fs.s3a.impl=org.apache.hadoop.fs.s3a.S3AFileSystem                 --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,org.apache.hadoop:hadoop-aws:3.3.4,org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.4.0,ru.yandex.clickhouse:clickhouse-jdbc:0.3.2                 /opt/***/spark_scripts/batch_processing_spark.py\n        ']
+[2025-06-04T20:16:51.251+0000] {subprocess.py:86} INFO - Output:
+[2025-06-04T20:16:54.216+0000] {subprocess.py:93} INFO - :: loading settings :: url = jar:file:/opt/spark/jars/ivy-2.5.1.jar!/org/apache/ivy/core/settings/ivysettings.xml
+[2025-06-04T20:16:54.332+0000] {subprocess.py:93} INFO - Ivy Default Cache set to: /home/***/.ivy2/cache
+[2025-06-04T20:16:54.333+0000] {subprocess.py:93} INFO - The jars for the packages stored in: /home/***/.ivy2/jars
+[2025-06-04T20:16:54.340+0000] {subprocess.py:93} INFO - org.apache.spark#spark-sql-kafka-0-10_2.12 added as a dependency
+[2025-06-04T20:16:54.340+0000] {subprocess.py:93} INFO - org.apache.hadoop#hadoop-aws added as a dependency
+[2025-06-04T20:16:54.340+0000] {subprocess.py:93} INFO - org.apache.iceberg#iceberg-spark-runtime-3.5_2.12 added as a dependency
+[2025-06-04T20:16:54.341+0000] {subprocess.py:93} INFO - ru.yandex.clickhouse#clickhouse-jdbc added as a dependency
+[2025-06-04T20:16:54.341+0000] {subprocess.py:93} INFO - :: resolving dependencies :: org.apache.spark#spark-submit-parent-ae8aa8a3-81ae-4f75-a52f-ca52de233d71;1.0
+[2025-06-04T20:16:54.342+0000] {subprocess.py:93} INFO - 	confs: [default]
+[2025-06-04T20:16:57.884+0000] {subprocess.py:93} INFO - 	found org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.0 in central
+[2025-06-04T20:16:58.286+0000] {subprocess.py:93} INFO - 	found org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.0 in central
+[2025-06-04T20:16:58.483+0000] {subprocess.py:93} INFO - 	found org.apache.kafka#kafka-clients;3.4.1 in central
+[2025-06-04T20:16:58.681+0000] {subprocess.py:93} INFO - 	found org.lz4#lz4-java;1.8.0 in central
+[2025-06-04T20:16:58.861+0000] {subprocess.py:93} INFO - 	found org.xerial.snappy#snappy-java;1.1.10.3 in central
+[2025-06-04T20:16:59.656+0000] {subprocess.py:93} INFO - 	found org.slf4j#slf4j-api;2.0.7 in central
+[2025-06-04T20:16:59.872+0000] {subprocess.py:93} INFO - 	found org.apache.hadoop#hadoop-client-runtime;3.3.4 in central
+[2025-06-04T20:17:00.077+0000] {subprocess.py:93} INFO - 	found org.apache.hadoop#hadoop-client-api;3.3.4 in central
+[2025-06-04T20:17:01.672+0000] {subprocess.py:93} INFO - 	found commons-logging#commons-logging;1.1.3 in central
+[2025-06-04T20:17:01.844+0000] {subprocess.py:93} INFO - 	found com.google.code.findbugs#jsr305;3.0.0 in central
+[2025-06-04T20:17:03.535+0000] {subprocess.py:93} INFO - 	found org.apache.commons#commons-pool2;2.11.1 in central
+[2025-06-04T20:17:03.562+0000] {subprocess.py:93} INFO - 	found org.apache.hadoop#hadoop-aws;3.3.4 in central
+[2025-06-04T20:17:03.575+0000] {subprocess.py:93} INFO - 	found com.amazonaws#aws-java-sdk-bundle;1.12.262 in central
+[2025-06-04T20:17:03.587+0000] {subprocess.py:93} INFO - 	found org.wildfly.openssl#wildfly-openssl;1.0.7.Final in central
+[2025-06-04T20:17:03.596+0000] {subprocess.py:93} INFO - 	found org.apache.iceberg#iceberg-spark-runtime-3.5_2.12;1.4.0 in central
+[2025-06-04T20:17:03.604+0000] {subprocess.py:93} INFO - 	found ru.yandex.clickhouse#clickhouse-jdbc;0.3.2 in central
+[2025-06-04T20:17:03.614+0000] {subprocess.py:93} INFO - 	found com.clickhouse#clickhouse-http-client;0.3.2 in central
+[2025-06-04T20:17:03.625+0000] {subprocess.py:93} INFO - 	found com.clickhouse#clickhouse-client;0.3.2 in central
+[2025-06-04T20:17:03.635+0000] {subprocess.py:93} INFO - 	found com.google.code.gson#gson;2.8.8 in central
+[2025-06-04T20:17:05.216+0000] {subprocess.py:93} INFO - 	found org.apache.httpcomponents#httpclient;4.5.13 in central
+[2025-06-04T20:17:06.753+0000] {subprocess.py:93} INFO - 	found commons-logging#commons-logging;1.2 in central
+[2025-06-04T20:17:07.617+0000] {subprocess.py:93} INFO - 	found commons-codec#commons-codec;1.11 in central
+[2025-06-04T20:17:07.795+0000] {subprocess.py:93} INFO - 	found org.apache.httpcomponents#httpmime;4.5.13 in central
+[2025-06-04T20:17:07.885+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-sql-kafka-0-10_2.12/3.5.0/spark-sql-kafka-0-10_2.12-3.5.0.jar ...
+[2025-06-04T20:17:08.123+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.0!spark-sql-kafka-0-10_2.12.jar (312ms)
+[2025-06-04T20:17:08.209+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-aws/3.3.4/hadoop-aws-3.3.4.jar ...
+[2025-06-04T20:17:08.927+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.apache.hadoop#hadoop-aws;3.3.4!hadoop-aws.jar (803ms)
+[2025-06-04T20:17:09.807+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/apache/iceberg/iceberg-spark-runtime-3.5_2.12/1.4.0/iceberg-spark-runtime-3.5_2.12-1.4.0.jar ...
+[2025-06-04T20:17:39.784+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.apache.iceberg#iceberg-spark-runtime-3.5_2.12;1.4.0!iceberg-spark-runtime-3.5_2.12.jar (30856ms)
+[2025-06-04T20:17:39.871+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/ru/yandex/clickhouse/clickhouse-jdbc/0.3.2/clickhouse-jdbc-0.3.2.jar ...
+[2025-06-04T20:17:40.456+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] ru.yandex.clickhouse#clickhouse-jdbc;0.3.2!clickhouse-jdbc.jar (670ms)
+[2025-06-04T20:17:40.540+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/apache/spark/spark-token-provider-kafka-0-10_2.12/3.5.0/spark-token-provider-kafka-0-10_2.12-3.5.0.jar ...
+[2025-06-04T20:17:40.670+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.0!spark-token-provider-kafka-0-10_2.12.jar (213ms)
+[2025-06-04T20:17:40.752+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/apache/kafka/kafka-clients/3.4.1/kafka-clients-3.4.1.jar ...
+[2025-06-04T20:17:49.860+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.apache.kafka#kafka-clients;3.4.1!kafka-clients.jar (9189ms)
+[2025-06-04T20:17:49.937+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/com/google/code/findbugs/jsr305/3.0.0/jsr305-3.0.0.jar ...
+[2025-06-04T20:17:50.049+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] com.google.code.findbugs#jsr305;3.0.0!jsr305.jar (188ms)
+[2025-06-04T20:17:50.126+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar ...
+[2025-06-04T20:17:50.413+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.apache.commons#commons-pool2;2.11.1!commons-pool2.jar (363ms)
+[2025-06-04T20:17:50.507+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-runtime/3.3.4/hadoop-client-runtime-3.3.4.jar ...
+[2025-06-04T20:18:17.996+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.apache.hadoop#hadoop-client-runtime;3.3.4!hadoop-client-runtime.jar (27582ms)
+[2025-06-04T20:18:18.074+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar ...
+[2025-06-04T20:18:18.530+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.lz4#lz4-java;1.8.0!lz4-java.jar (532ms)
+[2025-06-04T20:18:18.608+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/xerial/snappy/snappy-java/1.1.10.3/snappy-java-1.1.10.3.jar ...
+[2025-06-04T20:18:19.610+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.xerial.snappy#snappy-java;1.1.10.3!snappy-java.jar(bundle) (1079ms)
+[2025-06-04T20:18:19.690+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/slf4j/slf4j-api/2.0.7/slf4j-api-2.0.7.jar ...
+[2025-06-04T20:18:19.793+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.slf4j#slf4j-api;2.0.7!slf4j-api.jar (182ms)
+[2025-06-04T20:18:19.875+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/apache/hadoop/hadoop-client-api/3.3.4/hadoop-client-api-3.3.4.jar ...
+[2025-06-04T20:18:31.643+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.apache.hadoop#hadoop-client-api;3.3.4!hadoop-client-api.jar (11849ms)
+[2025-06-04T20:18:31.735+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/aws-java-sdk-bundle-1.12.262.jar ...
+[2025-06-04T20:22:57.871+0000] {subprocess.py:93} INFO - downloading https://repo1.maven.org/maven2/org/apache/httpcomponents/httpmime/4.5.13/httpmime-4.5.13.jar ...
+[2025-06-04T20:22:57.967+0000] {subprocess.py:93} INFO - 	[SUCCESSFUL ] org.apache.httpcomponents#httpmime;4.5.13!httpmime.jar (175ms)
+[2025-06-04T20:22:57.969+0000] {subprocess.py:93} INFO - :: resolution report :: resolve 13468ms :: artifacts dl 350160ms
+[2025-06-04T20:22:57.970+0000] {subprocess.py:93} INFO - 	:: modules in use:
+[2025-06-04T20:22:57.970+0000] {subprocess.py:93} INFO - 	com.amazonaws#aws-java-sdk-bundle;1.12.262 from central in [default]
+[2025-06-04T20:22:57.970+0000] {subprocess.py:93} INFO - 	com.clickhouse#clickhouse-client;0.3.2 from central in [default]
+[2025-06-04T20:22:57.970+0000] {subprocess.py:93} INFO - 	com.clickhouse#clickhouse-http-client;0.3.2 from central in [default]
+[2025-06-04T20:22:57.971+0000] {subprocess.py:93} INFO - 	com.google.code.findbugs#jsr305;3.0.0 from central in [default]
+[2025-06-04T20:22:57.971+0000] {subprocess.py:93} INFO - 	com.google.code.gson#gson;2.8.8 from central in [default]
+[2025-06-04T20:22:57.971+0000] {subprocess.py:93} INFO - 	commons-codec#commons-codec;1.11 from central in [default]
+[2025-06-04T20:22:57.972+0000] {subprocess.py:93} INFO - 	commons-logging#commons-logging;1.2 from central in [default]
+[2025-06-04T20:22:57.972+0000] {subprocess.py:93} INFO - 	org.apache.commons#commons-pool2;2.11.1 from central in [default]
+[2025-06-04T20:22:57.973+0000] {subprocess.py:93} INFO - 	org.apache.hadoop#hadoop-aws;3.3.4 from central in [default]
+[2025-06-04T20:22:57.973+0000] {subprocess.py:93} INFO - 	org.apache.hadoop#hadoop-client-api;3.3.4 from central in [default]
+[2025-06-04T20:22:57.973+0000] {subprocess.py:93} INFO - 	org.apache.hadoop#hadoop-client-runtime;3.3.4 from central in [default]
+[2025-06-04T20:22:57.973+0000] {subprocess.py:93} INFO - 	org.apache.httpcomponents#httpclient;4.5.13 from central in [default]
+[2025-06-04T20:22:57.973+0000] {subprocess.py:93} INFO - 	org.apache.httpcomponents#httpmime;4.5.13 from central in [default]
+[2025-06-04T20:22:57.973+0000] {subprocess.py:93} INFO - 	org.apache.iceberg#iceberg-spark-runtime-3.5_2.12;1.4.0 from central in [default]
+[2025-06-04T20:22:57.974+0000] {subprocess.py:93} INFO - 	org.apache.kafka#kafka-clients;3.4.1 from central in [default]
+[2025-06-04T20:22:57.974+0000] {subprocess.py:93} INFO - 	org.apache.spark#spark-sql-kafka-0-10_2.12;3.5.0 from central in [default]
+[2025-06-04T20:22:57.974+0000] {subprocess.py:93} INFO - 	org.apache.spark#spark-token-provider-kafka-0-10_2.12;3.5.0 from central in [default]
+[2025-06-04T20:22:57.974+0000] {subprocess.py:93} INFO - 	org.lz4#lz4-java;1.8.0 from central in [default]
+[2025-06-04T20:22:57.974+0000] {subprocess.py:93} INFO - 	org.slf4j#slf4j-api;2.0.7 from central in [default]
+[2025-06-04T20:22:57.974+0000] {subprocess.py:93} INFO - 	org.wildfly.openssl#wildfly-openssl;1.0.7.Final from central in [default]
+[2025-06-04T20:22:57.975+0000] {subprocess.py:93} INFO - 	org.xerial.snappy#snappy-java;1.1.10.3 from central in [default]
+[2025-06-04T20:22:57.975+0000] {subprocess.py:93} INFO - 	ru.yandex.clickhouse#clickhouse-jdbc;0.3.2 from central in [default]
+[2025-06-04T20:22:57.975+0000] {subprocess.py:93} INFO - 	:: evicted modules:
+[2025-06-04T20:22:57.975+0000] {subprocess.py:93} INFO - 	commons-logging#commons-logging;1.1.3 by [commons-logging#commons-logging;1.2] in [default]
+[2025-06-04T20:22:57.975+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-06-04T20:22:57.976+0000] {subprocess.py:93} INFO - 	|                  |            modules            ||   artifacts   |
+[2025-06-04T20:22:57.976+0000] {subprocess.py:93} INFO - 	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+[2025-06-04T20:22:57.976+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-06-04T20:22:57.976+0000] {subprocess.py:93} INFO - 	|      default     |   24  |   15  |   15  |   1   ||   22  |   14  |
+[2025-06-04T20:22:57.976+0000] {subprocess.py:93} INFO - 	---------------------------------------------------------------------
+[2025-06-04T20:22:57.977+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.977+0000] {subprocess.py:93} INFO - :: problems summary ::
+[2025-06-04T20:22:57.978+0000] {subprocess.py:93} INFO - :::: WARNINGS
+[2025-06-04T20:22:57.978+0000] {subprocess.py:93} INFO - 	problem while downloading module descriptor: https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.pom: Downloaded file size (0) doesn't match expected Content Length (4968) for https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.pom. Please retry. (85ms)
+[2025-06-04T20:22:57.978+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.978+0000] {subprocess.py:93} INFO - 		module not found: org.apache.httpcomponents#httpcore;4.4.13
+[2025-06-04T20:22:57.978+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.978+0000] {subprocess.py:93} INFO - 	==== local-m2-cache: tried
+[2025-06-04T20:22:57.979+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.979+0000] {subprocess.py:93} INFO - 	  file:/home/***/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.pom
+[2025-06-04T20:22:57.979+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.979+0000] {subprocess.py:93} INFO - 	  -- artifact org.apache.httpcomponents#httpcore;4.4.13!httpcore.jar:
+[2025-06-04T20:22:57.979+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.979+0000] {subprocess.py:93} INFO - 	  file:/home/***/.m2/repository/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar
+[2025-06-04T20:22:57.980+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.980+0000] {subprocess.py:93} INFO - 	==== local-ivy-cache: tried
+[2025-06-04T20:22:57.980+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.980+0000] {subprocess.py:93} INFO - 	  /home/***/.ivy2/local/org.apache.httpcomponents/httpcore/4.4.13/ivys/ivy.xml
+[2025-06-04T20:22:57.980+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.981+0000] {subprocess.py:93} INFO - 	  -- artifact org.apache.httpcomponents#httpcore;4.4.13!httpcore.jar:
+[2025-06-04T20:22:57.981+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.981+0000] {subprocess.py:93} INFO - 	  /home/***/.ivy2/local/org.apache.httpcomponents/httpcore/4.4.13/jars/httpcore.jar
+[2025-06-04T20:22:57.981+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.981+0000] {subprocess.py:93} INFO - 	==== central: tried
+[2025-06-04T20:22:57.981+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.982+0000] {subprocess.py:93} INFO - 	  https://repo1.maven.org/maven2/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.pom
+[2025-06-04T20:22:57.982+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.982+0000] {subprocess.py:93} INFO - 	==== spark-packages: tried
+[2025-06-04T20:22:57.982+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.982+0000] {subprocess.py:93} INFO - 	  https://repos.spark-packages.org/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.pom
+[2025-06-04T20:22:57.983+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.983+0000] {subprocess.py:93} INFO - 	  -- artifact org.apache.httpcomponents#httpcore;4.4.13!httpcore.jar:
+[2025-06-04T20:22:57.983+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.983+0000] {subprocess.py:93} INFO - 	  https://repos.spark-packages.org/org/apache/httpcomponents/httpcore/4.4.13/httpcore-4.4.13.jar
+[2025-06-04T20:22:57.983+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.983+0000] {subprocess.py:93} INFO - 		[FAILED     ] com.amazonaws#aws-java-sdk-bundle;1.12.262!aws-java-sdk-bundle.jar: Downloaded file size (0) doesn't match expected Content Length (280645251) for https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/aws-java-sdk-bundle-1.12.262.jar. Please retry. (266137ms)
+[2025-06-04T20:22:57.984+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.984+0000] {subprocess.py:93} INFO - 		[FAILED     ] com.amazonaws#aws-java-sdk-bundle;1.12.262!aws-java-sdk-bundle.jar: Downloaded file size (0) doesn't match expected Content Length (280645251) for https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/aws-java-sdk-bundle-1.12.262.jar. Please retry. (266137ms)
+[2025-06-04T20:22:57.984+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.984+0000] {subprocess.py:93} INFO - 	==== central: tried
+[2025-06-04T20:22:57.984+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.984+0000] {subprocess.py:93} INFO - 	  https://repo1.maven.org/maven2/com/amazonaws/aws-java-sdk-bundle/1.12.262/aws-java-sdk-bundle-1.12.262.jar
+[2025-06-04T20:22:57.985+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.985+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-06-04T20:22:57.985+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.985+0000] {subprocess.py:93} INFO - 		::          UNRESOLVED DEPENDENCIES         ::
+[2025-06-04T20:22:57.985+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.985+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-06-04T20:22:57.986+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.986+0000] {subprocess.py:93} INFO - 		:: org.apache.httpcomponents#httpcore;4.4.13: not found
+[2025-06-04T20:22:57.986+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.986+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-06-04T20:22:57.986+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.986+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.987+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-06-04T20:22:57.987+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.987+0000] {subprocess.py:93} INFO - 		::              FAILED DOWNLOADS            ::
+[2025-06-04T20:22:57.987+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.987+0000] {subprocess.py:93} INFO - 		:: ^ see resolution messages for details  ^ ::
+[2025-06-04T20:22:57.987+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.987+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-06-04T20:22:57.988+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.988+0000] {subprocess.py:93} INFO - 		:: com.amazonaws#aws-java-sdk-bundle;1.12.262!aws-java-sdk-bundle.jar
+[2025-06-04T20:22:57.988+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.988+0000] {subprocess.py:93} INFO - 		::::::::::::::::::::::::::::::::::::::::::::::
+[2025-06-04T20:22:57.988+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.988+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.989+0000] {subprocess.py:93} INFO - 
+[2025-06-04T20:22:57.989+0000] {subprocess.py:93} INFO - :: USE VERBOSE OR DEBUG MESSAGE LEVEL FOR MORE DETAILS
+[2025-06-04T20:22:57.989+0000] {subprocess.py:93} INFO - Exception in thread "main" java.lang.RuntimeException: [unresolved dependency: org.apache.httpcomponents#httpcore;4.4.13: not found, download failed: com.amazonaws#aws-java-sdk-bundle;1.12.262!aws-java-sdk-bundle.jar]
+[2025-06-04T20:22:57.989+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmitUtils$.resolveMavenCoordinates(SparkSubmit.scala:1537)
+[2025-06-04T20:22:57.989+0000] {subprocess.py:93} INFO - 	at org.apache.spark.util.DependencyUtils$.resolveMavenDependencies(DependencyUtils.scala:185)
+[2025-06-04T20:22:57.989+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.prepareSubmitEnvironment(SparkSubmit.scala:334)
+[2025-06-04T20:22:57.990+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.org$apache$spark$deploy$SparkSubmit$$runMain(SparkSubmit.scala:964)
+[2025-06-04T20:22:57.990+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.doRunMain$1(SparkSubmit.scala:194)
+[2025-06-04T20:22:57.990+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.submit(SparkSubmit.scala:217)
+[2025-06-04T20:22:57.990+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.doSubmit(SparkSubmit.scala:91)
+[2025-06-04T20:22:57.990+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit$$anon$2.doSubmit(SparkSubmit.scala:1120)
+[2025-06-04T20:22:57.990+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit$.main(SparkSubmit.scala:1129)
+[2025-06-04T20:22:57.991+0000] {subprocess.py:93} INFO - 	at org.apache.spark.deploy.SparkSubmit.main(SparkSubmit.scala)
+[2025-06-04T20:22:58.020+0000] {subprocess.py:97} INFO - Command exited with return code 1
+[2025-06-04T20:22:58.021+0000] {taskinstance.py:441} INFO - ::group::Post task execution logs
+[2025-06-04T20:22:58.038+0000] {taskinstance.py:2905} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 465, in _execute_task
+    result = _execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/taskinstance.py", line 432, in _execute_callable
+    return execute_callable(context=context, **execute_callable_kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/models/baseoperator.py", line 401, in wrapper
+    return func(self, *args, **kwargs)
+  File "/home/airflow/.local/lib/python3.9/site-packages/airflow/operators/bash.py", line 243, in execute
+    raise AirflowException(
+airflow.exceptions.AirflowException: Bash command failed. The command returned a non-zero exit code 1.
+[2025-06-04T20:22:58.043+0000] {taskinstance.py:1206} INFO - Marking task as FAILED. dag_id=daily_batch_processing, task_id=run_spark_daily_batch_job, run_id=scheduled__2025-06-03T00:00:00+00:00, execution_date=20250603T000000, start_date=20250604T201650, end_date=20250604T202258
+[2025-06-04T20:22:58.068+0000] {standard_task_runner.py:110} ERROR - Failed to execute job 5 for task run_spark_daily_batch_job (Bash command failed. The command returned a non-zero exit code 1.; 1190)
+[2025-06-04T20:22:58.106+0000] {local_task_job_runner.py:240} INFO - Task exited with return code 1
+[2025-06-04T20:22:58.128+0000] {taskinstance.py:3503} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2025-06-04T20:22:58.133+0000] {local_task_job_runner.py:222} INFO - ::endgroup::

@@ -1,0 +1,506 @@
+# ecommerce_platform-main/docker-compose.yml
+
+networks:
+  ecommerce_network:
+    driver: bridge 
+
+volumes:
+  airflow_db_data:
+  clickhouse_data:
+  metabase_data:
+  mongo_data:
+  minio_data:
+  postgres_data:  
+
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.5.3
+    container_name: zookeeper_infra
+    ports:
+      - "2182:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      - ecommerce_network
+    healthcheck:
+      test: echo srvr | nc localhost 2181 || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  kafka:
+    image: confluentinc/cp-kafka:7.3.0
+    container_name: kafka
+    depends_on:
+      - zookeeper
+    ports:
+      - "9092:9092"
+      - "29092:29092"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://kafka:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+
+    networks:
+      - ecommerce_network
+    healthcheck:    
+      test: kafka-broker-api-versions --bootstrap-server localhost:9092 || exit 1
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  minio:
+      image: minio/minio
+      container_name: minio
+      ports:
+      - "9005:9000" 
+      - "9006:9001" 
+      environment:
+        MINIO_ROOT_USER: minioadmin
+        MINIO_ROOT_PASSWORD: minioadmin
+      command: server /data --console-address ":9001"
+      networks:
+        - ecommerce_network
+      volumes:
+        - minio_data:/data
+
+  spark-master:
+      image: bitnami/spark:3.5.0
+      container_name: spark-master
+      hostname: spark-master
+      ports:
+        - "8080:8080"
+        - "7077:7077"
+      environment:
+        SPARK_MODE: master
+        SPARK_RPC_AUTHENTICATION_ENABLED: "no"
+        SPARK_RPC_ENCRYPTION_ENABLED: "no"
+        SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED: "no"
+#        HOME: /tmp 
+#        USER_HOME: /tmp
+      volumes:
+        - ./analytics:/app
+        - ./analytics/libs/clickhouse-jdbc-0.3.2-shaded.jar:/opt/bitnami/spark/jars/clickhouse-jdbc.jar
+        - ./batching/jars:/opt/bitnami/spark/jars
+      networks:
+        - ecommerce_network
+  spark-worker:
+    image: bitnami/spark:3.5.0
+    container_name: spark-worker
+    depends_on:
+      - spark-master
+    environment:
+      SPARK_MODE: worker
+      SPARK_MASTER_URL: spark://spark-master:7077
+      SPARK_WORKER_CORES: 4
+      SPARK_WORKER_MEMORY: 4g
+      SPARK_RPC_AUTHENTICATION_ENABLED: "no"
+      SPARK_RPC_ENCRYPTION_ENABLED: "no"
+      SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED: "no"
+      SPARK_EXTRA_CLASSPATH: /opt/bitnami/spark/custom-jars/*
+    networks:
+      - ecommerce_network
+    volumes: 
+      - ./batching/jars:/opt/bitnami/spark/custom-jars
+
+  clickhouse:
+      image: clickhouse/clickhouse-server:24.4 
+      container_name: clickhouse
+      ports:
+        - "8123:8123" 
+        - "9000:9000" 
+      volumes:
+        - clickhouse_data:/var/lib/clickhouse 
+        - ./analytics/clickhouse_init/create_schema.sql:/docker-entrypoint-initdb.d/analytics_create_schema.sql
+        - ./analytics/clickhouse_init/create_views.sql:/docker-entrypoint-initdb.d/analytics_create_views.sql
+      healthcheck: 
+        test: ["CMD", "clickhouse-client", "--query", "SELECT 1"]
+        interval: 5s
+        timeout: 5s
+        retries: 5
+        start_period: 10s 
+      environment:
+        CLICKHOUSE_USER: default
+        CLICKHOUSE_PASSWORD: password 
+        CLICKHOUSE_DB: default
+        CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1 
+      networks:
+        - ecommerce_network
+
+
+  airflow-db:
+      image: postgres:13
+      container_name: airflow-db
+      environment:
+        POSTGRES_DB: airflow
+        POSTGRES_USER: airflow
+        POSTGRES_PASSWORD: airflow
+      networks:
+        - ecommerce_network
+      volumes:
+        - airflow_db_data:/var/lib/postgresql/data
+        - ./infra/postgres/metabase_init.sql:/docker-entrypoint-initdb.d/metabase_init.sql
+
+  airflow-init:
+    build: # Add build instruction
+      context: ./batching
+      dockerfile: Dockerfile
+    container_name: airflow-init
+    depends_on:
+      - airflow-db
+    environment:
+      AIRFLOW__WEBSERVER__SECRET_KEY: 'OD8EAaVvAUW_qJhauCIirKs0_q9EuZoODrXH0EnooJI='
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db/airflow
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__CORE__FERNET_KEY: 'OD8EAaVvAUW_qJhauCIirKs0_q9EuZoODrXH0EnooJI='
+    entrypoint: [ "/bin/bash", "-c" ]
+    command:
+      - |
+        airflow db init
+        airflow users create \
+          --username airflow \
+          --firstname airflow \
+          --lastname airflow \
+          --role Admin \
+          --email airflow@example.com \
+          --password airflow
+    networks:
+      - ecommerce_network
+    volumes:
+      - ./batching/dags:/opt/airflow/dags
+      - ./batching/etl:/opt/airflow/etl 
+
+  airflow-webserver:
+    build:
+      context: ./batching 
+      dockerfile: Dockerfile 
+    container_name: airflow-webserver
+    restart: always
+    depends_on:
+      - airflow-db
+      - airflow-init
+    ports:
+      - "8081:8080"
+    environment:
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db/airflow
+      AIRFLOW__CORE__FERNET_KEY: 'OD8EAaVvAUW_qJhauCIirKs0_q9EuZoODrXH0EnooJI='
+      AIRFLOW__WEBSERVER__SECRET_KEY: 'OD8EAaVvAUW_qJhauCIirKs0_q9EuZoODrXH0EnooJI='
+      AIRFLOW__WEBSERVER__RBAC: 'true'
+      AIRFLOW__WEBSERVER__AUTHENTICATE: 'true'
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW_CONN_SPARK_DEFAULT: 'spark://spark-master:7077'
+    networks:
+      - ecommerce_network
+    volumes:
+      - ./batching/dags:/opt/airflow/dags
+      - ./batching/logs:/opt/airflow/logs
+      - ./batching/etl:/opt/airflow/etl
+    command: webserver
+    healthcheck:
+      test: [ "CMD", "curl", "--fail", "http://localhost:8080/health" ]
+      interval: 10s
+      timeout: 10s
+      retries: 5
+
+  airflow-scheduler:
+    build:
+      context: ./batching
+      dockerfile: Dockerfile
+    container_name: airflow-scheduler
+    restart: always
+    depends_on:
+      - airflow-db
+      - airflow-webserver
+    environment:
+      AIRFLOW__DATABASE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@airflow-db/airflow
+      AIRFLOW__CORE__FERNET_KEY: 'OD8EAaVvAUW_qJhauCIirKs0_q9EuZoODrXH0EnooJI='
+      AIRFLOW__WEBSERVER__SECRET_KEY: 'OD8EAaVvAUW_qJhauCIirKs0_q9EuZoODrXH0EnooJI='
+      AIRFLOW__CORE__LOAD_EXAMPLES: 'false'
+      AIRFLOW__CORE__EXECUTOR: LocalExecutor
+      AIRFLOW_CONN_SPARK_DEFAULT: 'spark://spark-master:7077'
+    networks:
+      - ecommerce_network
+    volumes:
+      - ./batching/dags:/opt/airflow/dags
+      - ./batching/logs:/opt/airflow/logs
+      - ./batching/etl:/opt/airflow/etl
+    command: scheduler
+
+  analytics:
+    build:
+      context: ./analytics
+      dockerfile: ./etl_job/Dockerfile
+    container_name: analytics_etl_job
+    depends_on:
+      clickhouse:
+        condition: service_healthy
+
+    environment:
+      - CLICKHOUSE_HOST=clickhouse
+      - SPARK_MASTER_URL=spark://spark-master:7077
+      - SPARK_DRIVER_HOST=analytics_etl_job # <-- ДОБАВИТЬ ЭТО
+#      - SPARK_NETWORK_CIDR=172.18.0.0/16 # Иногда полезно, если сеть Docker имеет специфичный CIDR
+    command: ["python", "etl_job/etl_job.py"]
+    networks:
+      - ecommerce_network
+    restart: "no" 
+    volumes:
+    - ./analytics:/app
+    - ./analytics/libs/clickhouse-jdbc-0.3.2-shaded.jar:/opt/bitnami/spark/jars/clickhouse-jdbc.jar
+    - ./batching/jars:/opt/bitnami/spark/jars # Mount to Bitnami's default JARs directory
+
+
+  analytics_test_data_loader: 
+    build:
+      context: ./analytics/analytics_test_data_loader 
+      dockerfile: Dockerfile
+    container_name: analytics_test_data_loader_init
+    depends_on:
+      clickhouse:
+        condition: service_healthy
+    networks:
+      - ecommerce_network
+    restart: "no" 
+
+  metabase:
+      image: metabase/metabase:latest
+      container_name: metabase
+      ports:
+        - "3000:3000"
+      environment:
+        MB_DB_TYPE: postgres
+        MB_DB_DBNAME: metabase_db # Имя базы данных для Metabase
+        MB_DB_HOST: airflow-db    # Имя хоста PostgreSQL сервиса
+        MB_DB_PORT: 5432
+        MB_DB_USER: metabase_user
+        MB_DB_PASS: metabase_password
+      depends_on:
+        - clickhouse # Для подключения к данным
+        - airflow-db # Для внутренней конфигурации Metabase
+      networks:
+        - ecommerce_network
+
+
+  kafka_to_clickhouse_w_kafka_stream:
+      build:
+        context: ./streaming/app
+        dockerfile: producer_streaming/Dockerfile.kafka_streaming
+      container_name: kafka_to_clickhouse_w_kafka_stream
+      environment:
+        KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+        CLICKHOUSE_HOST: clickhouse
+        CLICKHOUSE_PORT: 9000
+        CLICKHOUSE_USER: default
+        CLICKHOUSE_PASSWORD: password
+        CLICKHOUSE_DB: default
+        PYTHONUNBUFFERED: 1
+      networks:
+        - ecommerce_network
+      depends_on:
+        - clickhouse
+        - kafka 
+      restart: on-failure
+
+  kafka_generator:
+    build:
+      context: ./streaming/app
+      dockerfile: streaming_data_generator/Dockerfile.kafka_generator
+    container_name: kafka_generator
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:29092 
+      PYTHONUNBUFFERED: 1
+    networks:
+      - ecommerce_network
+    depends_on:
+      - kafka 
+    restart: on-failure
+
+  kafka_to_clickhouse_w_postgres_stream:
+    build:
+      context: ./streaming/app
+      dockerfile: postgres_streaming/Dockerfile.postgres_stream
+    container_name: kafka_to_clickhouse_w_postgres_stream
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      KAFKA_GROUP_ID: clickhouse_consumer_group_01
+      CLICKHOUSE_HOST: clickhouse
+      CLICKHOUSE_PORT: 9000
+      CLICKHOUSE_USER: default
+      CLICKHOUSE_PASSWORD: password
+      CLICKHOUSE_DB: default
+      PYTHONUNBUFFERED: 1
+    networks:
+      - ecommerce_network
+    depends_on:
+      - clickhouse
+      - kafka
+    restart: on-failure
+
+  kafka_to_clickhouse_w_mongo_stream:
+    build:
+      context: ./streaming/app
+      dockerfile: mongo_streaming/Dockerfile.mongo_stream
+    container_name: kafka_to_clickhouse_w_mongo_stream
+    environment:
+      KAFKA_BOOTSTRAP_SERVERS: kafka:29092
+      KAFKA_GROUP_ID: clickhouse_mongo_consumer_group_02
+      CLICKHOUSE_HOST: clickhouse
+      CLICKHOUSE_PORT: 9000
+      CLICKHOUSE_USER: default
+      CLICKHOUSE_PASSWORD: password
+      CLICKHOUSE_DB: default
+      PYTHONUNBUFFERED: 1
+    networks:
+      - ecommerce_network
+    depends_on:
+      - clickhouse
+      - kafka
+    restart: on-failure
+
+  mongo:
+    image: mongo:6.0
+    container_name: mongo_ecommerce
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongo_data:/data/db
+      - ./infra/mongo/mongo-keyfile:/etc/mongo/mongo-keyfile:ro
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=mongoadmin
+      - MONGO_INITDB_ROOT_PASSWORD=mongopassword
+    command: mongod --replSet rs0 --keyFile /etc/mongo/mongo-keyfile --bind_ip_all --auth
+    networks:
+      - ecommerce_network
+    healthcheck:
+      test: ["CMD", "mongosh", "--port", "27017", "--eval", "db.adminCommand({ ping: 1 })", "--quiet"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  mongo-setup:
+    image: mongo:6.0
+    container_name: mongo_setup_infra
+    depends_on:
+      mongo:
+        condition: service_healthy
+    restart: "no"
+    volumes:
+      - ./infra/mongo/mongo-keyfile:/etc/mongo/mongo-keyfile:ro
+    networks:
+      - ecommerce_network
+    entrypoint: |
+      bash -c '
+      echo "Waiting for MongoDB (infra) to start..."
+      until mongosh --host mongo --eval "print(\"waited for connection\")"
+      do
+        sleep 2
+      done
+      echo "MongoDB (infra) started. Configuring replica set..."
+      mongosh --host mongo --username mongoadmin --password mongopassword --authenticationDatabase admin <<EOF
+      try {
+        rs.status();
+        printjson(rs.status());
+        print("Replica set already initialized.");
+      } catch (e) {
+        print("Initializing replica set...");
+        rs.initiate({
+          _id: "rs0",
+          members: [
+            { _id: 0, host: "mongo:27017" }
+          ]
+        });
+        printjson(rs.status());
+      }
+      EOF
+      echo "Replica set configured/checked."
+      '
+
+
+  kafka-connect:
+    image: debezium/connect:2.4.2.Final
+    container_name: kafka_connect_infra
+    ports:
+      - "8084:8083"  
+    depends_on:
+      kafka:
+        condition: service_healthy
+      postgres:
+        condition: service_healthy
+      mongo-setup:
+        condition: service_completed_successfully
+    environment:
+      BOOTSTRAP_SERVERS: kafka:29092
+      GROUP_ID: connect-cluster-group
+      CONFIG_STORAGE_TOPIC: connect_configs
+      OFFSET_STORAGE_TOPIC: connect_offsets
+      STATUS_STORAGE_TOPIC: connect_statuses
+      CONNECT_KEY_CONVERTER: org.apache.kafka.connect.json.JsonConverter
+      CONNECT_VALUE_CONVERTER: org.apache.kafka.connect.json.JsonConverter
+      CONNECT_REST_ADVERTISED_HOST_NAME: localhost
+    volumes:
+      - ./infra/kafka-connect/connectors:/kafka/connectors/custom 
+    networks:
+      - ecommerce_network
+    healthcheck:
+      test: curl -f http://localhost:8084/connectors || exit 1 
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+
+  kafdrop:
+    image: obsidiandynamics/kafdrop:latest
+    container_name: kafdrop_infra
+    ports:
+      - "9007:9000"
+    environment:
+      KAFKA_BROKERCONNECT: kafka:29092
+      JVM_OPTS: "-Xms32M -Xmx64M"
+      SERVER_SERVLET_CONTEXTPATH: "/"
+    depends_on:
+      kafka:
+        condition: service_healthy
+    networks:
+      - ecommerce_network
+
+  postgres:
+    image: debezium/postgres:15-alpine
+    container_name: postgres_ecommerce
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=pguser
+      - POSTGRES_PASSWORD=pgpassword
+      - POSTGRES_DB=ecommerce_db
+    volumes:
+      - ./infra/postgres/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - ecommerce_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pguser -d ecommerce_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+
+  producer-api:
+    build:
+      context: ./producer_api/app 
+      dockerfile: Dockerfile
+    container_name: flask_producer_api
+    ports:
+      - "5001:5001"
+    environment:
+      - KAFKA_BROKER_URL=kafka:29092 
+      - FLASK_DEBUG=1
+    networks:
+      - ecommerce_network
+    depends_on:
+      kafka:
+        condition: service_healthy 
+    restart: unless-stopped

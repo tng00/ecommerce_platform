@@ -1,0 +1,4 @@
+kafka-python
+clickhouse-driver
+python-dateutil
+confluent-kafka
