@@ -58,7 +58,7 @@
         *Убедитесь, что вы находитесь в директории `ecommerce_platform/infra/`*
         ```bash
         cd mongo/
-        chmod ugo+x populate_mongo.sh # Если это имя вашего скрипта для MongoDB
+        chmod ugo+x fill_mongo.sh # Если это имя вашего скрипта для MongoDB
         ./fill_mongo.sh       # Запускаем скрипт (может быть другим, например fill_mongo.sh)
         cd .. # Вернуться в infra/
         ```
