@@ -1,1 +1,3 @@
 batching/jars/aws-java-sdk-bundle-1.12.262.jar
+batching/jars/hadoop-client-api-3.3.4.jar
+batching/jars/iceberg-spark-runtime-3.5_2.12-1.4.0.jar

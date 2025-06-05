@@ -79,12 +79,18 @@ services:
         SPARK_RPC_AUTHENTICATION_ENABLED: "no"
         SPARK_RPC_ENCRYPTION_ENABLED: "no"
         SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED: "no"
-#        HOME: /tmp 
-#        USER_HOME: /tmp
+        HOME: /tmp 
+        USER_HOME: /tmp
+                # --- ДОБАВЬТЕ ЭТИ ПЕРЕМЕННЫЕ ОКРУЖЕНИЯ ---
+        MINIO_ENDPOINT: http://minio:9000 # ВНУТРЕННИЙ порт MinIO
+        MINIO_ACCESS_KEY: minioadmin
+        MINIO_SECRET_KEY: minioadmin
+        ICEBERG_WAREHOUSE_PATH: s3a://ecommerce-data/iceberg_warehouse
+        KAFKA_BOOTSTRAP_SERVERS: kafka:29092 # Для согласованности
+
       volumes:
         - ./analytics:/app
         - ./analytics/libs/clickhouse-jdbc-0.3.2-shaded.jar:/opt/bitnami/spark/jars/clickhouse-jdbc.jar
-        - ./batching/jars:/opt/bitnami/spark/jars
       networks:
         - ecommerce_network
   spark-worker:
@@ -100,11 +106,14 @@ services:
       SPARK_RPC_AUTHENTICATION_ENABLED: "no"
       SPARK_RPC_ENCRYPTION_ENABLED: "no"
       SPARK_LOCAL_STORAGE_ENCRYPTION_ENABLED: "no"
-      SPARK_EXTRA_CLASSPATH: /opt/bitnami/spark/custom-jars/*
+      MINIO_ENDPOINT: http://minio:9000 
+      MINIO_ACCESS_KEY: minioadmin
+      MINIO_SECRET_KEY: minioadmin
+      ICEBERG_WAREHOUSE_PATH: s3a://ecommerce-data/iceberg_warehouse
+      KAFKA_BOOTSTRAP_SERVERS: kafka:29092 
+
     networks:
       - ecommerce_network
-    volumes: 
-      - ./batching/jars:/opt/bitnami/spark/custom-jars
 
   clickhouse:
       image: clickhouse/clickhouse-server:24.4 

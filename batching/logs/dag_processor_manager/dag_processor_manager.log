@@ -12764,3 +12764,1233 @@ File Path                                                 PID  Runtime      # DA
 /opt/airflow/dags/orchestrate_daily_data_refinement.py    718  0.01s             1           0  0.11s           2025-06-05T08:12:52
 /opt/airflow/dags/orchestrate_realtime_ingestion.py       721  0.01s             1           0  0.10s           2025-06-05T08:12:52
 ================================================================================
+[2025-06-05T08:13:53.153+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    728  0.01s             1           0  0.11s           2025-06-05T08:13:23
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       731  0.01s             1           0  0.09s           2025-06-05T08:13:23
+================================================================================
+[2025-06-05T08:14:23.294+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    738  0.01s             1           0  0.11s           2025-06-05T08:13:53
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       741  0.01s             1           0  0.10s           2025-06-05T08:13:53
+================================================================================
+[2025-06-05T08:14:53.519+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    748  0.01s             1           0  0.11s           2025-06-05T08:14:23
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       751  0.01s             1           0  0.10s           2025-06-05T08:14:23
+================================================================================
+[2025-06-05T08:15:23.756+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    758  0.02s             1           0  0.11s           2025-06-05T08:14:53
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       761  0.01s             1           0  0.10s           2025-06-05T08:14:53
+================================================================================
+[2025-06-05T08:15:40.976+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T08:15:40.978+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T08:15:54.070+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    768  0.02s             1           0  0.17s           2025-06-05T08:15:23
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       771  0.01s             1           0  0.15s           2025-06-05T08:15:23
+================================================================================
+[2025-06-05T08:16:24.352+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    778  0.02s             1           0  0.18s           2025-06-05T08:15:54
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       781  0.01s             1           0  0.14s           2025-06-05T08:15:54
+================================================================================
+[2025-06-05T08:16:54.635+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    788  0.02s             1           0  0.15s           2025-06-05T08:16:24
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       791  0.01s             1           0  0.14s           2025-06-05T08:16:24
+================================================================================
+[2025-06-05T08:17:24.916+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    798  0.02s             1           0  0.15s           2025-06-05T08:16:54
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       801  0.01s             1           0  0.15s           2025-06-05T08:16:54
+================================================================================
+[2025-06-05T08:17:55.178+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    808  0.02s             1           0  0.15s           2025-06-05T08:17:25
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       811  0.01s             1           0  0.12s           2025-06-05T08:17:25
+================================================================================
+[2025-06-05T08:18:25.474+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    818  0.02s             1           0  0.16s           2025-06-05T08:17:55
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       821  0.01s             1           0  0.15s           2025-06-05T08:17:55
+================================================================================
+[2025-06-05T08:18:55.741+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    828  0.02s             1           0  0.14s           2025-06-05T08:18:25
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       831  0.01s             1           0  0.12s           2025-06-05T08:18:25
+================================================================================
+[2025-06-05T08:19:26.008+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    838  0.02s             1           0  0.15s           2025-06-05T08:18:55
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       841  0.01s             1           0  0.12s           2025-06-05T08:18:55
+================================================================================
+[2025-06-05T08:19:56.289+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    848  0.01s             1           0  0.14s           2025-06-05T08:19:26
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       851  0.01s             1           0  0.12s           2025-06-05T08:19:26
+================================================================================
+[2025-06-05T08:20:26.517+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    858  0.01s             1           0  0.11s           2025-06-05T08:19:56
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       861  0.01s             1           0  0.09s           2025-06-05T08:19:56
+================================================================================
+[2025-06-05T08:20:41.666+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T08:20:41.667+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T08:20:56.751+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    868  0.01s             1           0  0.11s           2025-06-05T08:20:26
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       871  0.01s             1           0  0.10s           2025-06-05T08:20:26
+================================================================================
+[2025-06-05T08:21:26.975+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    878  0.02s             1           0  0.12s           2025-06-05T08:20:56
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       881  0.01s             1           0  0.10s           2025-06-05T08:20:56
+================================================================================
+[2025-06-05T08:21:57.203+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    888  0.01s             1           0  0.11s           2025-06-05T08:21:27
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       891  0.01s             1           0  0.10s           2025-06-05T08:21:27
+================================================================================
+[2025-06-05T08:22:27.448+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       901  0.01s             1           0  0.13s           2025-06-05T08:21:57
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    898  0.01s             1           0  0.12s           2025-06-05T08:21:57
+================================================================================
+[2025-06-05T08:22:57.699+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    908  0.01s             1           0  0.14s           2025-06-05T08:22:27
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       911  0.01s             1           0  0.12s           2025-06-05T08:22:27
+================================================================================
+[2025-06-05T08:23:27.930+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    918  0.01s             1           0  0.11s           2025-06-05T08:22:57
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       921  0.01s             1           0  0.10s           2025-06-05T08:22:57
+================================================================================
+[2025-06-05T08:23:58.156+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    928  0.01s             1           0  0.11s           2025-06-05T08:23:28
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       931  0.01s             1           0  0.10s           2025-06-05T08:23:28
+================================================================================
+[2025-06-05T08:24:26.540+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-06-05T08:26:17.709+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-06-05T08:26:17.711+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-06-05T08:26:17.713+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-06-05T08:26:17.714+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T08:26:17.718+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T08:26:17.938+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       171  0.08s             0           0
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    168  0.12s             0           0
+================================================================================
+[2025-06-05T08:26:48.096+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  1.13s           2025-06-05T08:26:18
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  1.07s           2025-06-05T08:26:18
+================================================================================
+[2025-06-05T08:27:18.531+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.31s           2025-06-05T08:26:49
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.25s           2025-06-05T08:26:49
+================================================================================
+[2025-06-05T08:27:48.758+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:27:19
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T08:27:19
+================================================================================
+[2025-06-05T08:28:18.984+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:27:49
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.09s           2025-06-05T08:27:49
+================================================================================
+[2025-06-05T08:28:49.123+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.12s           2025-06-05T08:28:20
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.11s           2025-06-05T08:28:20
+================================================================================
+[2025-06-05T08:29:19.365+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.13s           2025-06-05T08:28:50
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.11s           2025-06-05T08:28:50
+================================================================================
+[2025-06-05T08:29:49.590+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:29:20
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T08:29:20
+================================================================================
+[2025-06-05T08:30:19.813+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:29:50
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T08:29:50
+================================================================================
+[2025-06-05T08:30:50.035+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.12s           2025-06-05T08:30:20
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T08:30:20
+================================================================================
+[2025-06-05T08:31:18.272+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T08:31:18.274+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T08:31:20.297+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.12s           2025-06-05T08:30:51
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.11s           2025-06-05T08:30:51
+================================================================================
+[2025-06-05T08:31:50.433+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:31:21
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T08:31:21
+================================================================================
+[2025-06-05T08:32:20.672+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:31:51
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T08:31:51
+================================================================================
+[2025-06-05T08:32:50.903+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:32:21
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T08:32:21
+================================================================================
+[2025-06-05T08:33:21.137+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:32:52
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T08:32:52
+================================================================================
+[2025-06-05T08:33:51.391+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.13s           2025-06-05T08:33:22
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.12s           2025-06-05T08:33:22
+================================================================================
+[2025-06-05T08:34:21.618+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:33:52
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.09s           2025-06-05T08:33:52
+================================================================================
+[2025-06-05T08:34:51.860+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.12s           2025-06-05T08:34:22
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.11s           2025-06-05T08:34:22
+================================================================================
+[2025-06-05T08:35:22.094+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.13s           2025-06-05T08:34:52
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T08:34:52
+================================================================================
+[2025-06-05T08:35:52.242+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.13s           2025-06-05T08:35:23
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.12s           2025-06-05T08:35:23
+================================================================================
+[2025-06-05T08:35:53.022+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-06-05T08:37:05.204+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-06-05T08:37:05.205+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-06-05T08:37:05.206+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-06-05T08:37:05.207+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T08:37:05.212+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T08:37:05.594+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       172  0.18s             0           0
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    168  0.25s             0           0
+================================================================================
+[2025-06-05T08:37:35.973+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  1.42s           2025-06-05T08:37:06
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  1.32s           2025-06-05T08:37:06
+================================================================================
+[2025-06-05T08:38:06.463+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.33s           2025-06-05T08:37:37
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.32s           2025-06-05T08:37:37
+================================================================================
+[2025-06-05T08:38:36.691+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.12s           2025-06-05T08:38:07
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T08:38:07
+================================================================================
+[2025-06-05T08:39:06.913+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:38:37
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T08:38:37
+================================================================================
+[2025-06-05T08:39:37.144+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.11s           2025-06-05T08:39:08
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:39:08
+================================================================================
+[2025-06-05T08:40:07.390+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.15s           2025-06-05T08:39:38
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.12s           2025-06-05T08:39:38
+================================================================================
+[2025-06-05T08:40:37.620+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:40:08
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.09s           2025-06-05T08:40:08
+================================================================================
+[2025-06-05T08:41:07.861+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.12s           2025-06-05T08:40:38
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T08:40:38
+================================================================================
+[2025-06-05T08:41:38.092+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:41:08
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.09s           2025-06-05T08:41:08
+================================================================================
+[2025-06-05T08:42:05.300+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T08:42:05.302+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T08:42:08.330+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:41:39
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.09s           2025-06-05T08:41:39
+================================================================================
+[2025-06-05T08:42:38.547+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T08:42:09
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.09s           2025-06-05T08:42:09
+================================================================================
+[2025-06-05T08:43:08.771+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.12s           2025-06-05T08:42:39
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T08:42:39
+================================================================================
+[2025-06-05T08:43:38.908+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.13s           2025-06-05T08:43:09
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.11s           2025-06-05T08:43:09
+================================================================================
+[2025-06-05T08:44:09.164+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.14s           2025-06-05T08:43:40
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.13s           2025-06-05T08:43:40
+================================================================================
+[2025-06-05T08:44:19.930+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-06-05T08:46:09.149+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-06-05T08:46:09.153+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-06-05T08:46:09.155+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-06-05T08:46:09.157+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T08:46:09.167+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T08:46:09.520+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       171  0.18s             0           0
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    168  0.22s             0           0
+================================================================================
+[2025-06-05T08:46:39.715+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  1.22s           2025-06-05T08:46:10
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  1.16s           2025-06-05T08:46:10
+================================================================================
+[2025-06-05T08:47:09.901+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.30s           2025-06-05T08:46:41
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.29s           2025-06-05T08:46:41
+================================================================================
+[2025-06-05T08:47:15.946+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-06-05T08:48:23.760+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-06-05T08:48:23.765+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-06-05T08:48:23.766+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-06-05T08:48:23.766+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T08:48:23.773+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T08:48:24.063+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       171  0.15s             0           0
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    168  0.17s             0           0
+================================================================================
+[2025-06-05T08:48:54.566+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  1.43s           2025-06-05T08:48:25
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  1.43s           2025-06-05T08:48:25
+================================================================================
+[2025-06-05T08:49:24.737+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.28s           2025-06-05T08:48:55
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.27s           2025-06-05T08:48:55
+================================================================================
+[2025-06-05T08:49:55.219+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.13s           2025-06-05T08:49:26
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.11s           2025-06-05T08:49:26
+================================================================================
+[2025-06-05T08:50:04.307+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-06-05T08:51:09.434+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-06-05T08:51:09.436+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-06-05T08:51:09.436+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-06-05T08:51:09.438+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T08:51:09.444+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T08:51:09.658+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       170  0.07s             0           0
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    167  0.10s             0           0
+================================================================================
+[2025-06-05T08:51:40.095+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    178  0.02s             1           0  0.34s           2025-06-05T08:51:09
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       181  0.01s             1           0  0.23s           2025-06-05T08:51:09
+================================================================================
+[2025-06-05T08:52:10.918+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    188  0.02s             1           0  0.71s           2025-06-05T08:51:40
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       191  0.01s             1           0  0.68s           2025-06-05T08:51:40
+================================================================================
+[2025-06-05T08:52:41.147+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    198  0.01s             1           0  0.12s           2025-06-05T08:52:11
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       201  0.01s             1           0  0.10s           2025-06-05T08:52:11
+================================================================================
+[2025-06-05T08:53:11.384+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    208  0.01s             1           0  0.12s           2025-06-05T08:52:41
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       211  0.01s             1           0  0.10s           2025-06-05T08:52:41
+================================================================================
+[2025-06-05T08:53:41.616+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    218  0.01s             1           0  0.11s           2025-06-05T08:53:11
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       221  0.01s             1           0  0.10s           2025-06-05T08:53:11
+================================================================================
+[2025-06-05T08:54:11.849+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    228  0.02s             1           0  0.12s           2025-06-05T08:53:41
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       231  0.01s             1           0  0.10s           2025-06-05T08:53:41
+================================================================================
+[2025-06-05T08:54:42.098+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    238  0.01s             1           0  0.13s           2025-06-05T08:54:11
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       241  0.01s             1           0  0.12s           2025-06-05T08:54:11
+================================================================================
+[2025-06-05T08:55:12.321+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    248  0.01s             1           0  0.11s           2025-06-05T08:54:42
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       251  0.01s             1           0  0.10s           2025-06-05T08:54:42
+================================================================================
+[2025-06-05T08:55:42.539+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    258  0.01s             1           0  0.11s           2025-06-05T08:55:12
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       261  0.01s             1           0  0.09s           2025-06-05T08:55:12
+================================================================================
+[2025-06-05T08:56:09.737+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T08:56:09.739+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T08:56:12.776+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    268  0.01s             1           0  0.11s           2025-06-05T08:55:42
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       271  0.01s             1           0  0.10s           2025-06-05T08:55:42
+================================================================================
+[2025-06-05T08:56:43.002+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    278  0.02s             1           0  0.13s           2025-06-05T08:56:12
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       281  0.01s             1           0  0.10s           2025-06-05T08:56:12
+================================================================================
+[2025-06-05T08:57:07.292+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-06-05T08:58:12.405+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-06-05T08:58:12.406+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-06-05T08:58:12.407+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-06-05T08:58:12.408+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T08:58:12.411+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T08:58:12.650+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       170  0.11s             0           0
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    167  0.15s             0           0
+================================================================================
+[2025-06-05T08:58:43.065+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    178  0.03s             1           0  0.31s           2025-06-05T08:58:12
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       181  0.01s             1           0  0.31s           2025-06-05T08:58:12
+================================================================================
+[2025-06-05T08:59:13.976+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       191  0.01s             1           0  0.81s           2025-06-05T08:58:43
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    188  0.01s             1           0  0.80s           2025-06-05T08:58:43
+================================================================================
+[2025-06-05T08:59:44.265+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    198  0.02s             1           0  0.18s           2025-06-05T08:59:14
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       201  0.01s             1           0  0.15s           2025-06-05T08:59:14
+================================================================================
+[2025-06-05T09:00:14.500+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    208  0.01s             1           0  0.13s           2025-06-05T08:59:44
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       211  0.01s             1           0  0.11s           2025-06-05T08:59:44
+================================================================================
+[2025-06-05T09:00:44.726+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    218  0.01s             1           0  0.11s           2025-06-05T09:00:14
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       221  0.01s             1           0  0.09s           2025-06-05T09:00:14
+================================================================================
+[2025-06-05T09:01:14.985+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    228  0.02s             1           0  0.14s           2025-06-05T09:00:44
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       231  0.01s             1           0  0.13s           2025-06-05T09:00:44
+================================================================================
+[2025-06-05T09:01:45.208+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    238  0.01s             1           0  0.11s           2025-06-05T09:01:15
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       241  0.01s             1           0  0.09s           2025-06-05T09:01:15
+================================================================================
+[2025-06-05T09:02:15.435+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    248  0.01s             1           0  0.11s           2025-06-05T09:01:45
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       251  0.01s             1           0  0.10s           2025-06-05T09:01:45
+================================================================================
+[2025-06-05T09:02:45.670+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    258  0.01s             1           0  0.12s           2025-06-05T09:02:15
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       261  0.01s             1           0  0.11s           2025-06-05T09:02:15
+================================================================================
+[2025-06-05T09:03:12.877+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T09:03:12.879+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T09:03:15.918+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    268  0.02s             1           0  0.12s           2025-06-05T09:02:45
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       271  0.01s             1           0  0.10s           2025-06-05T09:02:45
+================================================================================
+[2025-06-05T09:03:46.147+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    278  0.01s             1           0  0.12s           2025-06-05T09:03:16
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       281  0.01s             1           0  0.11s           2025-06-05T09:03:16
+================================================================================
+[2025-06-05T09:04:16.379+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    288  0.01s             1           0  0.11s           2025-06-05T09:03:46
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       291  0.01s             1           0  0.10s           2025-06-05T09:03:46
+================================================================================
+[2025-06-05T09:04:46.610+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    298  0.02s             1           0  0.11s           2025-06-05T09:04:16
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       301  0.01s             1           0  0.09s           2025-06-05T09:04:16
+================================================================================
+[2025-06-05T09:05:16.850+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    308  0.02s             1           0  0.12s           2025-06-05T09:04:46
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       311  0.01s             1           0  0.10s           2025-06-05T09:04:46
+================================================================================
+[2025-06-05T09:05:47.077+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    318  0.01s             1           0  0.11s           2025-06-05T09:05:16
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       321  0.01s             1           0  0.09s           2025-06-05T09:05:16
+================================================================================
+[2025-06-05T09:06:17.313+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    328  0.02s             1           0  0.11s           2025-06-05T09:05:47
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       331  0.01s             1           0  0.10s           2025-06-05T09:05:47
+================================================================================
+[2025-06-05T09:06:47.565+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    338  0.02s             1           0  0.15s           2025-06-05T09:06:17
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       341  0.01s             1           0  0.12s           2025-06-05T09:06:17
+================================================================================
+[2025-06-05T09:07:17.803+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    348  0.01s             1           0  0.12s           2025-06-05T09:06:47
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       351  0.01s             1           0  0.11s           2025-06-05T09:06:47
+================================================================================
+[2025-06-05T09:07:48.073+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    358  0.02s             1           0  0.15s           2025-06-05T09:07:17
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       361  0.01s             1           0  0.14s           2025-06-05T09:07:17
+================================================================================
+[2025-06-05T09:08:13.280+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T09:08:13.281+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T09:08:18.329+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    368  0.02s             1           0  0.12s           2025-06-05T09:07:48
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       371  0.01s             1           0  0.10s           2025-06-05T09:07:48
+================================================================================
+[2025-06-05T09:08:48.563+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    378  0.02s             1           0  0.11s           2025-06-05T09:08:18
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       381  0.01s             1           0  0.10s           2025-06-05T09:08:18
+================================================================================
+[2025-06-05T09:09:18.793+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    388  0.02s             1           0  0.11s           2025-06-05T09:08:48
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       391  0.01s             1           0  0.10s           2025-06-05T09:08:48
+================================================================================
+[2025-06-05T09:09:49.029+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    398  0.01s             1           0  0.13s           2025-06-05T09:09:18
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       401  0.01s             1           0  0.11s           2025-06-05T09:09:18
+================================================================================
+[2025-06-05T09:10:19.181+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    408  0.02s             1           0  0.11s           2025-06-05T09:09:49
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       411  0.01s             1           0  0.10s           2025-06-05T09:09:49
+================================================================================
+[2025-06-05T09:10:49.410+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    418  0.02s             1           0  0.12s           2025-06-05T09:10:19
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       421  0.01s             1           0  0.10s           2025-06-05T09:10:19
+================================================================================
+[2025-06-05T09:11:17.954+0000] {manager.py:452} INFO - Exiting gracefully upon receiving signal 15
+[2025-06-05T09:13:41.238+0000] {manager.py:470} INFO - Processing files using up to 2 processes at a time 
+[2025-06-05T09:13:41.240+0000] {manager.py:471} INFO - Process each file at most once every 30 seconds
+[2025-06-05T09:13:41.241+0000] {manager.py:472} INFO - Checking for new files in /opt/airflow/dags every 300 seconds
+[2025-06-05T09:13:41.242+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T09:13:41.245+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T09:13:41.553+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  ----------
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       170  0.14s             0           0
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    167  0.19s             0           0
+================================================================================
+[2025-06-05T09:14:12.100+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                                 PID  Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py    178  0.05s             1           0  0.52s           2025-06-05T09:13:41
+/opt/airflow/dags/orchestrate_realtime_ingestion.py       181  0.03s             1           0  0.40s           2025-06-05T09:13:41
+================================================================================
+[2025-06-05T09:14:42.116+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.88s           2025-06-05T09:14:12
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.85s           2025-06-05T09:14:12
+================================================================================
+[2025-06-05T09:15:12.371+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.14s           2025-06-05T09:14:43
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.12s           2025-06-05T09:14:43
+================================================================================
+[2025-06-05T09:15:42.511+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.12s           2025-06-05T09:15:13
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.11s           2025-06-05T09:15:13
+================================================================================
+[2025-06-05T09:16:12.729+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.12s           2025-06-05T09:15:43
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.12s           2025-06-05T09:15:43
+================================================================================
+[2025-06-05T09:16:42.881+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.17s           2025-06-05T09:16:13
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.15s           2025-06-05T09:16:13
+================================================================================
+[2025-06-05T09:17:13.150+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.22s           2025-06-05T09:16:44
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.20s           2025-06-05T09:16:44
+================================================================================
+[2025-06-05T09:17:43.572+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.12s           2025-06-05T09:17:14
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T09:17:14
+================================================================================
+[2025-06-05T09:18:13.834+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.15s           2025-06-05T09:17:44
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.12s           2025-06-05T09:17:44
+================================================================================
+[2025-06-05T09:18:41.974+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T09:18:41.976+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T09:18:43.997+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.14s           2025-06-05T09:18:14
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.13s           2025-06-05T09:18:14
+================================================================================
+[2025-06-05T09:19:14.206+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.12s           2025-06-05T09:18:45
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.11s           2025-06-05T09:18:45
+================================================================================
+[2025-06-05T09:19:44.497+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.16s           2025-06-05T09:19:15
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.15s           2025-06-05T09:19:15
+================================================================================
+[2025-06-05T09:20:14.723+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T09:19:45
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T09:19:45
+================================================================================
+[2025-06-05T09:20:44.998+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.15s           2025-06-05T09:20:15
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.13s           2025-06-05T09:20:15
+================================================================================
+[2025-06-05T09:21:15.318+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.18s           2025-06-05T09:20:46
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.16s           2025-06-05T09:20:46
+================================================================================
+[2025-06-05T09:21:45.619+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.18s           2025-06-05T09:21:16
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.16s           2025-06-05T09:21:16
+================================================================================
+[2025-06-05T09:22:15.855+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T09:21:46
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.09s           2025-06-05T09:21:46
+================================================================================
+[2025-06-05T09:22:46.131+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.16s           2025-06-05T09:22:17
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.14s           2025-06-05T09:22:17
+================================================================================
+[2025-06-05T09:23:16.389+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T09:22:47
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.11s           2025-06-05T09:22:47
+================================================================================
+[2025-06-05T09:23:42.593+0000] {manager.py:737} INFO - Searching for files in /opt/airflow/dags
+[2025-06-05T09:23:42.595+0000] {manager.py:740} INFO - There are 2 files in /opt/airflow/dags
+[2025-06-05T09:23:46.620+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T09:23:17
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.09s           2025-06-05T09:23:17
+================================================================================
+[2025-06-05T09:24:16.843+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T09:23:47
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.09s           2025-06-05T09:23:47
+================================================================================
+[2025-06-05T09:24:47.187+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.11s           2025-06-05T09:24:17
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T09:24:17
+================================================================================
+[2025-06-05T09:25:17.831+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.40s           2025-06-05T09:24:48
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.33s           2025-06-05T09:24:48
+================================================================================
+[2025-06-05T09:25:48.159+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.31s           2025-06-05T09:25:19
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.28s           2025-06-05T09:25:19
+================================================================================
+[2025-06-05T09:26:18.409+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.14s           2025-06-05T09:25:49
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.13s           2025-06-05T09:25:49
+================================================================================
+[2025-06-05T09:26:48.651+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.13s           2025-06-05T09:26:19
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.11s           2025-06-05T09:26:19
+================================================================================
+[2025-06-05T09:27:18.880+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.12s           2025-06-05T09:26:49
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T09:26:49
+================================================================================
+[2025-06-05T09:27:49.107+0000] {manager.py:878} INFO - 
+================================================================================
+DAG File Processing Stats
+
+File Path                                               PID    Runtime      # DAGs    # Errors  Last Runtime    Last Run
+------------------------------------------------------  -----  ---------  --------  ----------  --------------  -------------------
+/opt/airflow/dags/orchestrate_daily_data_refinement.py                           1           0  0.12s           2025-06-05T09:27:20
+/opt/airflow/dags/orchestrate_realtime_ingestion.py                              1           0  0.10s           2025-06-05T09:27:19
+================================================================================

@@ -54,10 +54,12 @@ docker-compose logs -f analytics
 
 ## Шаг 4: Логи Airflow DAGs через Web-UI
 
-1. Перейдите на страницу http://localhost:8081/dags
+1. Перейдите на страницу http://localhost:8081/
 2. Нажмите на последний или текущий запуск нужного DAG.
 3. В представлении "Graph View" или "Grid View" нажмите на конкретную задачу 
 4. В открывшемся окне задачи выберите вкладку "Log".
+
+![log_airflow](../src/log_airflow.png)
 
 ## Шаг 5: Web-UI Spark Master
 

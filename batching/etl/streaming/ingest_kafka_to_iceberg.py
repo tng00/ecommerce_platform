@@ -6,13 +6,20 @@ from pyspark.sql.types import StructType, StructField, StringType, IntegerType, 
 
 os.environ['JAVA_HOME'] = '/usr/lib/jvm/java-11-openjdk-amd64'
 
+# --- Spark Session Configuration ---
+# Получаем настройки из переменных окружения
+MINIO_ENDPOINT = os.getenv("MINIO_ENDPOINT", "http://minio:9000") # Теперь это значение будет использоваться
+MINIO_ACCESS_KEY = os.getenv("MINIO_ACCESS_KEY", "minioadmin")
+MINIO_SECRET_KEY = os.getenv("MINIO_SECRET_KEY", "minioadmin")
+ICEBERG_WAREHOUSE_PATH = os.getenv("ICEBERG_WAREHOUSE_PATH", "s3a://ecommerce-data/iceberg_warehouse")
+KAFKA_BOOTSTRAP_SERVERS = os.getenv("KAFKA_BOOTSTRAP_SERVERS", "kafka:29092") # Добавим и для Kafka
 
 spark = SparkSession.builder \
     .appName("KafkaToIcebergPipeline") \
     .config("spark.jars.packages", "org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,org.apache.hadoop:hadoop-aws:3.3.4,org.apache.iceberg:iceberg-spark-runtime-3.5_2.12:1.4.0") \
-    .config("spark.hadoop.fs.s3a.endpoint", "http://localhost:9000") \
-    .config("spark.hadoop.fs.s3a.access.key", "minioadmin") \
-    .config("spark.hadoop.fs.s3a.secret.key", "minioadmin") \
+    .config("spark.hadoop.fs.s3a.endpoint", MINIO_ENDPOINT) \
+    .config("spark.hadoop.fs.s3a.access.key", MINIO_ACCESS_KEY) \
+    .config("spark.hadoop.fs.s3a.secret.key", MINIO_SECRET_KEY) \
     .config("spark.hadoop.fs.s3a.path.style.access", "true") \
     .config("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem") \
     .config("spark.hadoop.fs.s3a.connection.ssl.enabled", "false") \
@@ -24,7 +31,7 @@ spark = SparkSession.builder \
     .config("spark.python.worker.timeout", "120") \
     .config("spark.sql.catalog.iceberg_catalog", "org.apache.iceberg.spark.SparkCatalog") \
     .config("spark.sql.catalog.iceberg_catalog.type", "hadoop") \
-    .config("spark.sql.catalog.iceberg_catalog.warehouse", "s3a://ecommerce-data/iceberg_warehouse") \
+    .config("spark.sql.catalog.iceberg_catalog.warehouse", ICEBERG_WAREHOUSE_PATH) \
     .getOrCreate()
 
 print("Spark Session initialized and MinIO connection configured.")
@@ -236,7 +243,7 @@ def process_kafka_topic(topic):
  
     kafka_df = spark.readStream \
         .format("kafka") \
-        .option("kafka.bootstrap.servers", "localhost:9092") \
+        .option("kafka.bootstrap.servers", "kafka:29092") \
         .option("subscribe", topic) \
         .option("startingOffsets", "earliest") \
         .load()
@@ -321,13 +328,18 @@ topics = [
 ]
 
 
-queries = [process_kafka_topic(topic) for topic in topics]
+queries = []
+for topic in topics:
+    query = process_kafka_topic(topic)
+    if query:
+        queries.append(query)
 
 print("All streaming queries started. Awaiting termination...")
 
 
-for query in queries:
-    if query: 
-        query.awaitTermination(10) 
+if queries:
+    spark.streams.awaitAnyTermination()
+else:
+    print("No streaming queries were started.")
 
 print("All Kafka to Iceberg pipelines terminated.")
